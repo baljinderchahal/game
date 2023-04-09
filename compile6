@@ -1,0 +1,12 @@
+rm -f parta partb partc game
+echo "Compiling Part A..."
+g++ Board.cpp BoardValue.cpp TestHelper.cpp TestBoard6.cpp -o parta
+echo "Compiling Part B..."
+g++ History.cpp Board.cpp BoardValue.cpp TestHelper.cpp TestHistory6B.cpp -o partb
+echo "Compiling Part C..."
+g++ History.cpp Board.cpp BoardValue.cpp TestHelper.cpp TestHistory6C.cpp -o partc
+if ! test -f partc
+echo "Compiling Parts D, E, and F..."
+g++ PlaceString.cpp BoardValue.cpp Board.cpp Search.cpp Move.cpp ArtificialIntelligence.cpp History.cpp Game.cpp main.cpp -o game
+echo "Done."
+
